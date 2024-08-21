@@ -15,6 +15,9 @@ public class Java3G {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+//         boolean a; 
+//        a = Character.isDigit('a');
+//        System.out.println(a);
     }
     
 }

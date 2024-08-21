@@ -168,6 +168,7 @@ public class Profesor extends javax.swing.JFrame {
         if(! objValidador.validarCajaTextoCadena(jTextField4)) return;
         if(! objValidador.validarCajaTextoCadena(jTextField5)) return;
         //if(!objValidador.validarCadena(jTextField1.getText())) return;
+       
         
     }
     

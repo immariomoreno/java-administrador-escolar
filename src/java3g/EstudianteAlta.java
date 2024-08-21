@@ -4,21 +4,27 @@
  */
 package java3g;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author mariormoreno
  */
-public class Estudiante extends javax.swing.JFrame {
+public class EstudianteAlta extends javax.swing.JFrame {
 
     /**
      * Creates new form Estudiante
      */
     public Validador objValidador;
-    public Estudiante() {
+    EstudianteObj objEstudiante;
+    ArrayList<EstudianteObj> listaEstudiante;
+    
+    public EstudianteAlta() {
         initComponents();
         objValidador = new Validador();
+        objEstudiante = new EstudianteObj(); 
+        listaEstudiante = new ArrayList();
     }
 
     /**
@@ -210,15 +216,35 @@ public class Estudiante extends javax.swing.JFrame {
         System.out.println("Apellido Paterno:" + this.jTextField3.getText());
         System.out.println("Apellido Materno:" + this.jTextField4.getText());
         System.out.println("Edad" + this.jTextField5.getText()); 
+        objEstudiante.setMatricula(Integer.parseInt(this.jTextField1.getText()));
+        objEstudiante.setNombre(this.jTextField2.getText());
+        objEstudiante.setApellidoPaterno(this.jTextField3.getText());
+        objEstudiante.setApellidoMaterno(this.jTextField4.getText());
+        objEstudiante.setEdad(Integer.parseInt(this.jTextField5.getText()));
+        listaEstudiante.add(objEstudiante);
+        limpiar();
+        imprimirLista();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    public void imprimirLista(){
+        EstudianteObj objAux;
+        System.out.println("Valor del objeto");
+        for (int i = 0; i < listaEstudiante.size(); i++) {
+            objAux = listaEstudiante.get(i);
+            System.out.println("Matricula: "+ objEstudiante.getMatricula());
+            System.out.println("Nombre:"+ objEstudiante.getNombre());
+            
+        }
+    }
+    
+    public void limpiar() {
         this.jTextField1.setText("");
         this.jTextField2.setText("");
         this.jTextField3.setText("");
         this.jTextField4.setText("");
-        this.jTextField5.setText("");this.jTextField1.setText("");
-        
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+        this.jTextField5.setText("");
 
+    }
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
         if(!this.validaCampoTexto()) return;
@@ -241,20 +267,21 @@ public class Estudiante extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Estudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EstudianteAlta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Estudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EstudianteAlta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Estudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EstudianteAlta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Estudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EstudianteAlta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Estudiante().setVisible(true);
+                new EstudianteAlta().setVisible(true);
             }
         });
     }
