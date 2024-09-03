@@ -23,8 +23,8 @@ public class EstudianteAlta extends javax.swing.JFrame {
     public EstudianteAlta() {
         initComponents();
         objValidador = new Validador();
-        objEstudiante = new EstudianteObj(); 
-        listaEstudiante = new ArrayList();
+        //objEstudiante = new EstudianteObj(); aquí estaba instanciado al principio
+        listaEstudiante = new ArrayList(); 
     }
 
     /**
@@ -206,16 +206,16 @@ public class EstudianteAlta extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Ingresabdo un espacio en blanco el resultado es length: 1, isEmpty:false, isBlank: true
         this.validaCampoTexto2();
-        System.out.println("Resultado Length:"+this.jTextField1.getText().length()); //No es tan conveniente porque estamos manejando objetos
-        System.out.println("Resultado Empty:"+this.jTextField1.getText().isEmpty()); //IsEmpty toma en cuenta los espacios vacíos
-        System.out.println("Resultado Blank:"+this.jTextField1.getText().isBlank()); //IsBlank ignora espacios vacíos
+//        System.out.println("Resultado Length:"+this.jTextField1.getText().length()); No es tan conveniente porque estamos manejando objetos
+//        System.out.println("Resultado Empty:"+this.jTextField1.getText().isEmpty()); IsEmpty toma en cuenta los espacios vacíos
+//        System.out.println("Resultado Blank:"+this.jTextField1.getText().isBlank()); IsBlank ignora espacios vacíos
         
-       
+        objEstudiante = new EstudianteObj(); //aquí se soluciona el problema de que no se creaba el nuevo objeto 
         System.out.println("Matricula:" + this.jTextField1.getText());
         System.out.println("Nombre:" + this.jTextField2.getText());
         System.out.println("Apellido Paterno:" + this.jTextField3.getText());
         System.out.println("Apellido Materno:" + this.jTextField4.getText());
-        System.out.println("Edad" + this.jTextField5.getText()); 
+        System.out.println("Edad:" + this.jTextField5.getText()); 
         objEstudiante.setMatricula(Integer.parseInt(this.jTextField1.getText()));
         objEstudiante.setNombre(this.jTextField2.getText());
         objEstudiante.setApellidoPaterno(this.jTextField3.getText());
@@ -228,11 +228,14 @@ public class EstudianteAlta extends javax.swing.JFrame {
 
     public void imprimirLista(){
         EstudianteObj objAux;
+        System.out.println(""); 
         System.out.println("Valor del objeto");
         for (int i = 0; i < listaEstudiante.size(); i++) {
             objAux = listaEstudiante.get(i);
             System.out.println("Matricula: "+ objEstudiante.getMatricula());
             System.out.println("Nombre:"+ objEstudiante.getNombre());
+            System.out.println("Apellido paterno" + objEstudiante.getApellidoPaterno());
+            System.out.println("Apellido materno" + objEstudiante.getApellidoMaterno());
             
         }
     }
