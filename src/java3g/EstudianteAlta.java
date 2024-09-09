@@ -17,8 +17,8 @@ public class EstudianteAlta extends javax.swing.JFrame {
      * Creates new form Estudiante
      */
     public Validador objValidador;
-    EstudianteObj objEstudiante;
-    ArrayList<EstudianteObj> listaEstudiante;
+    Estudiante objEstudiante;
+    ArrayList<Estudiante> listaEstudiante;
     
     public EstudianteAlta() {
         initComponents();
@@ -210,7 +210,7 @@ public class EstudianteAlta extends javax.swing.JFrame {
 //        System.out.println("Resultado Empty:"+this.jTextField1.getText().isEmpty()); IsEmpty toma en cuenta los espacios vacíos
 //        System.out.println("Resultado Blank:"+this.jTextField1.getText().isBlank()); IsBlank ignora espacios vacíos
         
-        objEstudiante = new EstudianteObj(); //aquí se soluciona el problema de que no se creaba el nuevo objeto 
+        objEstudiante = new Estudiante(); //aquí se soluciona el problema de que no se creaba el nuevo objeto 
         System.out.println("Matricula:" + this.jTextField1.getText());
         System.out.println("Nombre:" + this.jTextField2.getText());
         System.out.println("Apellido Paterno:" + this.jTextField3.getText());
@@ -227,7 +227,7 @@ public class EstudianteAlta extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void imprimirLista(){
-        EstudianteObj objAux;
+        Estudiante objAux;
         System.out.println(""); 
         System.out.println("Valor del objeto");
         for (int i = 0; i < listaEstudiante.size(); i++) {

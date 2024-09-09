@@ -8,15 +8,15 @@ package java3g;
  *
  * @author mariormoreno
  */
-public class EstudianteObj {
+public class Estudiante {
     
     private  int matricula, edad;
     private String nombre, apellidoPaterno, apellidoMaterno;
 
-    public EstudianteObj() {
+    public Estudiante() {
     }
     
-    public EstudianteObj(int matricula, int edad, String nombre, String apellidoPaterno, String apellidoMaterno) {
+    public Estudiante(int matricula, int edad, String nombre, String apellidoPaterno, String apellidoMaterno) {
         this.matricula = matricula;
         this.edad = edad;
         this.nombre = nombre;
