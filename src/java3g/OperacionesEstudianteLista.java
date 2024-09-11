@@ -33,7 +33,22 @@ public class OperacionesEstudianteLista extends CRUD{
 
     @Override
     public void read() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        @Override
+        public void read() {
+        
+            if (objListaEstudiante.isEmpty()) {
+                System.out.println("No hay estudiantes registrados.");
+            } else {
+                for (Estudiante estudiante : objListaEstudiante) {
+                    System.out.println("Matricula: " + estudiante.getMatricula());
+                    System.out.println("Nombre: " + estudiante.getNombre());
+                    System.out.println("Apellido Paterno: " + estudiante.getApellidoPaterno());
+                    System.out.println("Apellido Materno: " + estudiante.getApellidoMaterno());
+                    System.out.println("Edad: " + estudiante.getEdad());
+                }
+            }
+        }
     }
 
     @Override
