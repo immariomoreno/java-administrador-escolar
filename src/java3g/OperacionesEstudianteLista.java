@@ -26,14 +26,10 @@ public class OperacionesEstudianteLista extends CRUD{
         objListaEstudiante.add(objEstudiante);
     }
     
-//    @Override
-//    public void create() {
-//        
-//    }
 
     @Override
     public void read() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
     }
 
     @Override
