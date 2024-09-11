@@ -1,4 +1,4 @@
-package java3g;
+package controlador;
 
 
 import javax.swing.JOptionPane;

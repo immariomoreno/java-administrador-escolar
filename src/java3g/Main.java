@@ -8,7 +8,7 @@ package java3g;
  *
  * @author mariormoreno
  */
-public class Java3G {
+public class Main {
 
     /**
      * @param args the command line arguments

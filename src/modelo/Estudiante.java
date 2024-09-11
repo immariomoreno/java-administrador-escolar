@@ -2,26 +2,44 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package java3g;
+package modelo;
 
 /**
  *
  * @author mariormoreno
  */
-public class Profesor {
+public class Estudiante {
     
-    String noPlaza;
-    String nombre;
-    String apellidoPaterno;
-    String apellidoMaterno;
-    int edad;
+    private  int matricula, edad;
+    private String nombre, apellidoPaterno, apellidoMaterno;
 
-    public String getNoPlaza() {
-        return noPlaza;
+    public Estudiante() {
+    }
+    
+    public Estudiante(int matricula, int edad, String nombre, String apellidoPaterno, String apellidoMaterno) {
+        this.matricula = matricula;
+        this.edad = edad;
+        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+    }
+    
+    
+    
+    public int getMatricula() {
+        return matricula;
     }
 
-    public void setNoPlaza(String noPlaza) {
-        this.noPlaza = noPlaza;
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
     public String getNombre() {
@@ -47,14 +65,5 @@ public class Profesor {
     public void setApellidoMaterno(String apellidoMaterno) {
         this.apellidoMaterno = apellidoMaterno;
     }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-    
     
 }

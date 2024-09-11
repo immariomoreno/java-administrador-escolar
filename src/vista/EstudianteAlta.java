@@ -2,9 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package java3g;
+package vista;
 
+import controlador.ControladorEstudianteAlta;
+import controlador.OperacionesEstudianteLista;
+import modelo.Estudiante;
 import java.util.ArrayList;
+import controlador.Validador;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,12 +23,18 @@ public class EstudianteAlta extends javax.swing.JFrame {
     public Validador objValidador;
     Estudiante objEstudiante;
     ArrayList<Estudiante> listaEstudiante;
+    OperacionesEstudianteLista objOpeEstudianteLista;
+    ControladorEstudianteAlta objControladorEstudianteAlta;
     
     public EstudianteAlta() {
         initComponents();
         objValidador = new Validador();
         //objEstudiante = new EstudianteObj(); aquí estaba instanciado al principio
         listaEstudiante = new ArrayList(); 
+        objOpeEstudianteLista = new OperacionesEstudianteLista();
+        objControladorEstudianteAlta = new ControladorEstudianteAlta(this);
+        
+        
     }
 
     /**
@@ -73,11 +83,6 @@ public class EstudianteAlta extends javax.swing.JFrame {
         });
 
         jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jLabel6.setText("Edad");
 
@@ -202,30 +207,6 @@ public class EstudianteAlta extends javax.swing.JFrame {
         if(! objValidador.validarCajaTextoCadena(jTextField2)) return;
     }
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        //Ingresabdo un espacio en blanco el resultado es length: 1, isEmpty:false, isBlank: true
-        this.validaCampoTexto2();
-//        System.out.println("Resultado Length:"+this.jTextField1.getText().length()); No es tan conveniente porque estamos manejando objetos
-//        System.out.println("Resultado Empty:"+this.jTextField1.getText().isEmpty()); IsEmpty toma en cuenta los espacios vacíos
-//        System.out.println("Resultado Blank:"+this.jTextField1.getText().isBlank()); IsBlank ignora espacios vacíos
-        
-        objEstudiante = new Estudiante(); //aquí se soluciona el problema de que no se creaba el nuevo objeto 
-        System.out.println("Matricula:" + this.jTextField1.getText());
-        System.out.println("Nombre:" + this.jTextField2.getText());
-        System.out.println("Apellido Paterno:" + this.jTextField3.getText());
-        System.out.println("Apellido Materno:" + this.jTextField4.getText());
-        System.out.println("Edad:" + this.jTextField5.getText()); 
-        objEstudiante.setMatricula(Integer.parseInt(this.jTextField1.getText()));
-        objEstudiante.setNombre(this.jTextField2.getText());
-        objEstudiante.setApellidoPaterno(this.jTextField3.getText());
-        objEstudiante.setApellidoMaterno(this.jTextField4.getText());
-        objEstudiante.setEdad(Integer.parseInt(this.jTextField5.getText()));
-        listaEstudiante.add(objEstudiante);
-        limpiar();
-        imprimirLista();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     public void imprimirLista(){
         Estudiante objAux;
         System.out.println(""); 
@@ -290,7 +271,7 @@ public class EstudianteAlta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
