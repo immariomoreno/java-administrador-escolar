@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class OperacionesEstudianteLista extends CRUD{ 
 
     ArrayList<Estudiante> objListaEstudiante;
+    Estudiante objEstudiante; // crear un objeto Estudiante que se use para aplicar polimorfismo en la clase CRUD ya que cuenta actualmente con dos métodos (Estudiante y Profesor)
 
     public OperacionesEstudianteLista() {
         objListaEstudiante = new ArrayList();
@@ -20,7 +21,7 @@ public class OperacionesEstudianteLista extends CRUD{
     
     
     @Override //aquí empezamos a aplicar el MVC con este método que crea un estudiante a partir de la clase CRUD
-    public void create(Estudiante objEstudiante) {
+    public void create() {
         
         objListaEstudiante.add(objEstudiante);
     }
@@ -43,6 +44,15 @@ public class OperacionesEstudianteLista extends CRUD{
     @Override
     public void delete() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    
+    public Estudiante getObjEstudiante() {
+        return objEstudiante;
+    }
+
+    public void setObjEstudiante(Estudiante objEstudiante) {
+        this.objEstudiante = objEstudiante;
     }
     
     

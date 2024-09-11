@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class OperacionesProfesorLista extends CRUD{
     
      ArrayList<Profesor> objListaProfesor;
-     Profesor objProfesor; // crear un objeto Estudiante que se use para aplicar polimorfismo en la clase CRUD ya que cuenta actualmente con dos métodos (Estudiante y Profesor)
+     Profesor objProfesor; // crear un objeto Profesor que se use para aplicar polimorfismo en la clase CRUD ya que cuenta actualmente con dos métodos (Estudiante y Profesor)
 
     public OperacionesProfesorLista() {
         objListaProfesor = new ArrayList();

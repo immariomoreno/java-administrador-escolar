@@ -10,7 +10,7 @@ package java3g;
  */
 public abstract class CRUD { //las clases abstractas son las que se definen como reglas de negocio.
     
-    public abstract void create(Estudiante objEstudiante);
+    public abstract void create();
     public abstract void read();
     public abstract void update();
     public abstract void delete();
